@@ -1,9 +1,13 @@
-import { useState } from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 import { BookContext } from "../contexts/BookContext";
 
 const BookForm = () => {
+  const { isDark, themes } = useContext(ThemeContext);
+  const theme = isDark ? themes.dark : themes.light;
+
   const { dispatch } = useContext(BookContext);
+
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
@@ -20,6 +24,7 @@ const BookForm = () => {
         type="text"
         placeholder="title"
         required
+        style={{ background: theme.ele }}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
@@ -27,10 +32,15 @@ const BookForm = () => {
         type="text"
         placeholder="author"
         required
+        style={{ background: theme.ele }}
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
       />
-      <input type="submit" value="Add Book" />
+      <input
+        type="submit"
+        style={{ background: theme.btnbg, color: theme.btntxt }}
+        value="Add Book"
+      />
     </form>
   );
 };
