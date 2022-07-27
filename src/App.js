@@ -1,7 +1,12 @@
+import NavBar from "./components/NavBar";
+import BookContextProvider from "./contexts/BookContext";
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <BookContextProvider>
+        <NavBar />
+      </BookContextProvider>
     </div>
   );
 }
