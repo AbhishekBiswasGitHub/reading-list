@@ -10,6 +10,7 @@ Learn react, context & hooks. Creating a fully functional app with them will pro
     - Add new book to the list
     - Remove book from list
     - Store data to local storage
+    - theming
 
 ## Learned
 
