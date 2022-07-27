@@ -9,7 +9,7 @@ const BookList = () => {
     <div className="book-list">
       <ul>
         {books.map((book) => (
-          <BookDetails book={book} />
+          <BookDetails key={book.id} book={book} />
         ))}
       </ul>
     </div>
